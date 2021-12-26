@@ -9,19 +9,37 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("SwiftUI tutorial")
-                .font(.title)
-            HStack {
-                Text("VStack Text")
-                    .font(.subheadline)
+        VStack{
+            MapView()
+                .ignoresSafeArea(edges: .top)
+                .frame(height: 300)
+            
+            CircleImage()
+                .offset(y: -130)
+                .padding(.bottom, -130)
+            
+            VStack(alignment: .leading) {
+                Text("SwiftUI tutorial")
+                    .font(.title)
+                HStack {
+                    Text("VStack Text")
+                        
+                    Spacer()
+                    Text("HStack Text")
+                }
+                .font(.subheadline)
+                .foregroundColor(.secondary)
                 
-                Spacer()
-                Text("HStack Text")
-                    .font(.subheadline)
+                Divider()
+                
+                Text("About Image")
+                    .font(.title2)
+                Text("Description text")
             }
+            .padding()
+            
+            Spacer()
         }
-        .padding()
     }
 }
 
